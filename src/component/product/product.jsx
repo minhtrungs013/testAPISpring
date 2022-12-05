@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ShoppingCartOutlined } from '@ant-design/icons';
+import { ShoppingCartOutlined, ShoppingFilled } from '@ant-design/icons';
 import img1 from "../img/f1.png"
 import "./product.css"
 import axios from 'axios';
@@ -95,7 +95,7 @@ export default function Product() {
                                 <Switch checked={!loading} onChange={onChange} />
                                 <Space size="middle">
                                     <Badge count={5}>
-                                        <ShoppingCartOutlined className='cart_img' />
+                                        <ShoppingFilled className='cart_img' />
                                     </Badge>
                                 </Space>
 
@@ -120,12 +120,14 @@ export default function Product() {
                                 <Card
                                     loading={loading}
                                     key={item.id}
+                                    className='aaaaa'
                                 >
                                     <Meta
                                         avatar={<Avatar src={img1} size={64} />}
                                         title={item.name}
                                         description={item.address}
                                     />
+                                    <ShoppingCartOutlined className='cart_img-btn' />
                                 </Card>
                             </div>
 
